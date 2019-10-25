@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 export default class InprogressBoard extends Component {
   render() {
     return (
-      <div>
+      <div className="inprogressboard-container">
         <h3>hello from InprogressBoard</h3>
       </div>
     );
