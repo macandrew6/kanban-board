@@ -4,3 +4,12 @@ body {
   font-family: sans-serif;
 }
 
+.kanbanboard-container {
+  display: flex;
+}
+
+.kanbanboard-container .board {
+  border: 1px solid black;
+  width: 300px;
+  min-height: 600px;
+}
