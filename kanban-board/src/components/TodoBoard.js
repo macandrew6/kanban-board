@@ -4,7 +4,7 @@ export default class TodoBoard extends Component {
   render() {
     return (
       <div>
-        <h2>hello from TodoBoard</h2>
+        <h3>hello from TodoBoard</h3>
       </div>
     );
   }
