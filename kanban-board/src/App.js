@@ -9,8 +9,8 @@ class App extends Component {
 
     this.state = {
       todoList: ['take a walk', 'make a shake', 'shake a make'],
-      inProgressList: [],
-      completedList: []
+      inProgressList: ['bake a cake', 'take a break', 'see a lake'],
+      completedList: ['fake a take', 'take a fake', 'goodness sakes']
     };
   }
 
