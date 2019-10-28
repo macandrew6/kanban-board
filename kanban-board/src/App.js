@@ -8,9 +8,13 @@ class App extends Component {
     super();
 
     this.state = {
-      
+      todoList: [],
+      inProgressList: [],
+      completedList: []
     };
   }
+
+  
   render() {
     return (
       <div className="App">
