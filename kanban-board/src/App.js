@@ -8,21 +8,24 @@ class App extends Component {
     super();
 
     this.state = {
-      todoList: [],
+      todoList: ['take a walk', 'make a shake', 'shake a make'],
       inProgressList: [],
       completedList: []
     };
   }
 
-  
+
   render() {
+
+    const { todoList, inProgressList, completedList } = this.state;
+    
     return (
       <div className="App">
         <h2>Kanban board</h2>
         <div className="kanbanboard-container">
-          <TodoBoard />
-          <InprogressBoard />
-          <CompletedBoard />
+          <TodoBoard todoList={todoList}/>
+          <InprogressBoard inProgressList={inProgressList}/>
+          <CompletedBoard completedList={completedList}/>
         </div>
       </div>
     );
