@@ -4,6 +4,13 @@ import InprogressBoard from './components/InprogressBoard';
 import CompletedBoard from './components/CompletedBoard';
 
 class App extends Component {
+  constructor() {
+    super();
+
+    this.state = {
+      
+    };
+  }
   render() {
     return (
       <div className="App">
