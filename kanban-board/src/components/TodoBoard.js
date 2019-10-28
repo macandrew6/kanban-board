@@ -6,10 +6,10 @@ export default class TodoBoard extends Component {
 
     return (
       <div className="todoboard-container board">
-        <h3>hello from TodoBoard</h3>
+        <h3>TodoBoard</h3>
         <div>
           {todoList.map((todo, i) => (
-            <li>todo</li>
+            <div>{todo}</div>
           ))}
         </div>
       </div>

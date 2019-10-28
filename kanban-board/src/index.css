@@ -4,6 +4,13 @@ body {
   font-family: sans-serif;
 }
 
+.App {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+}
+
 .kanbanboard-container {
   display: flex;
 }
@@ -12,4 +19,5 @@ body {
   border: 1px solid black;
   width: 300px;
   min-height: 600px;
+  text-align: center;
 }
