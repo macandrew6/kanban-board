@@ -14,9 +14,11 @@ class App extends Component {
     };
   }
 
+  // functions;
+    // pull one item from todo list and move into inProgress list
+    // on mouse down
 
   render() {
-
     const { todoList, inProgressList, completedList } = this.state;
     
     return (
