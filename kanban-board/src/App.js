@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import TodoBoard from './components/TodoBoard';
 import InprogressBoard from './components/InprogressBoard';
 import CompletedBoard from './components/CompletedBoard';
+import TodoInput from './components/TodoInput';
 
 class App extends Component {
   constructor() {
@@ -9,12 +10,15 @@ class App extends Component {
 
     this.state = {
       categories: ['todo', 'inProgress', 'completed'],
-      todoList: ['take a walk', 'make a shake', 'shake a make'],
-      inProgressList: ['bake a cake', 'take a break', 'see a lake'],
-      completedList: ['fake a take', 'take a fake', 'goodness sakes']
+      todoList: [],
+      inProgressList: [],
+      completedList: []
     };
   }
   
+  addTodo() {
+    
+  }
   // functions;
     // pull one item from todo list and move into inProgress list
     // on mouse down
@@ -30,6 +34,7 @@ class App extends Component {
           <InprogressBoard inProgressList={inProgressList}/>
           <CompletedBoard completedList={completedList}/>
         </div>
+        <TodoInput />
       </div>
     );
   }

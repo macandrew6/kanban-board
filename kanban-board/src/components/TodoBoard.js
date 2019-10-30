@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import TodoItem from './TodoItem';
 
 export default class TodoBoard extends Component {
   render() {
@@ -9,7 +10,7 @@ export default class TodoBoard extends Component {
         <h3>TodoBoard</h3>
         <div>
           {todoList.map((todo, i) => (
-            <div>{todo}</div>
+            <TodoItem todo={todo} />
           ))}
         </div>
       </div>

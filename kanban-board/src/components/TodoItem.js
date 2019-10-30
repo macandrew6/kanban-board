@@ -5,14 +5,16 @@ export default class TodoItem extends Component {
     super();
 
     this.state = {
-      
+
     };
   }
   
   render() {
+    const { todo } = this.props;
+
     return (
       <div>
-        
+        {todo}
       </div>
     );
   }
