@@ -14,7 +14,7 @@ export default class TodoItem extends Component {
 
     return (
       <div>
-        {todo}
+        {todo.text}
       </div>
     );
   }

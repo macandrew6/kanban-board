@@ -14,10 +14,17 @@ class App extends Component {
       inProgressList: [],
       completedList: []
     };
+
+    this.addTodo = this.addTodo.bind(this);
   }
   
-  addTodo() {
-    
+  addTodo(todo) {
+    const todos = JSON.parse(JSON.stringify(this.state.todoList));
+    todos.push(todo);
+
+    this.setState({
+      todoList: todos
+    });
   }
   // functions;
     // pull one item from todo list and move into inProgress list
@@ -34,7 +41,7 @@ class App extends Component {
           <InprogressBoard inProgressList={inProgressList}/>
           <CompletedBoard completedList={completedList}/>
         </div>
-        <TodoInput />
+        <TodoInput addTodo={this.addTodo}/>
       </div>
     );
   }

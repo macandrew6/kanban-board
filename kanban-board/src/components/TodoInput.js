@@ -5,30 +5,35 @@ export default class TodoInput extends Component {
     super();
 
     this.state = {
-      todo: {
-        text: '',
-        id: 0,
-        category: 'todo'
-      }
+      text: '',
+      id: 0,
+      category: 'todo'
     };
   }
 
   handleInputChange(e) {
-    const todo = Object.assign({}, this.state.todo);
-    todo.text = e.target.value;
-    console.log(todo);
     this.setState({
-      todo
+      text: e.target.value,
+      id: this.state.id + 1
+    });
+  }
+
+  handleSubmitInput(e) {
+    e.preventDefault();
+    this.props.addTodo(this.state);
+    this.setState({
+      text: ''
     });
   }
   
   render() {
     return (
       <div>
-        <form>
+        <form onSubmit={e => this.handleSubmitInput(e)}>
           <input
             type="text"
             placeholder="Type todo here..."
+            value={this.state.text}
             onChange={e => this.handleInputChange(e)}
           />
           <button type="submit">Add Todo</button>
