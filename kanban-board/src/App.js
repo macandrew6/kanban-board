@@ -14,7 +14,6 @@ class App extends Component {
       completedList: ['fake a take', 'take a fake', 'goodness sakes']
     };
   }
-
   
   // functions;
     // pull one item from todo list and move into inProgress list
