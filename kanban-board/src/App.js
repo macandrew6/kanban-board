@@ -17,6 +17,10 @@ class App extends Component {
 
     this.addTodo = this.addTodo.bind(this);
   }
+
+  componentDidMount() {
+    
+  }
   
   addTodo(todo) {
     const todos = JSON.parse(JSON.stringify(this.state.todoList));
@@ -28,6 +32,10 @@ class App extends Component {
   }
 
   moveTodoRight() {
+
+  }
+
+  moveTodoLeft() {
 
   }
 
