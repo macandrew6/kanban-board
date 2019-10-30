@@ -5,7 +5,7 @@ export default class TodoItem extends Component {
     super();
 
     this.state = {
-
+      
     };
   }
   
@@ -15,6 +15,10 @@ export default class TodoItem extends Component {
     return (
       <div>
         {todo.text}
+        <div>
+          <button>Left</button>
+          <button>Right</button>
+        </div>
       </div>
     );
   }
