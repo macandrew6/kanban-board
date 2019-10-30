@@ -8,12 +8,14 @@ class App extends Component {
     super();
 
     this.state = {
+      categories: ['todo', 'inProgress', 'completed'],
       todoList: ['take a walk', 'make a shake', 'shake a make'],
       inProgressList: ['bake a cake', 'take a break', 'see a lake'],
       completedList: ['fake a take', 'take a fake', 'goodness sakes']
     };
   }
 
+  
   // functions;
     // pull one item from todo list and move into inProgress list
     // on mouse down
