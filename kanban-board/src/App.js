@@ -23,7 +23,18 @@ class App extends Component {
     let savedInProgressList = localStorage.getItem('inProgressList');
     let savedCompletedList = localStorage.getItem('completedList');
 
-    
+    if (savedTodoList && savedInProgressList && savedCompletedList) {
+      let parsedTodoList = JSON.parse(savedTodoList);
+      let parsedInProgressList = JSON.parse(savedInProgressList);
+      let parsedCompletedList = JSON.parse(savedCompletedList);
+      this.setState({
+        todoList: parsedTodoList,
+        inProgressList: parsedInProgressList,
+        completedList: parsedCompletedList
+      });
+    } else {
+      console.log('no todos')
+    }
   }
   
   addTodo(todo) {
@@ -32,7 +43,14 @@ class App extends Component {
 
     this.setState({
       todoList: todos
+    }, () => {
+      localStorage.setItem('todoList', JSON.stringify(todos));
+      localStorage.setItem('inProgressList', JSON.stringify(this.state.inProgressList));
+      localStorage.setItem('completedList', JSON.stringify(this.state.completedList));
     });
+    console.log(localStorage.getItem('todoList'));
+    console.log(localStorage.getItem('inProgressList'));
+    console.log(localStorage.getItem('completedList'));
   }
 
   moveTodoRight() {
