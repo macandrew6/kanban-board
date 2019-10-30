@@ -19,6 +19,10 @@ class App extends Component {
   }
 
   componentDidMount() {
+    let savedTodoList = localStorage.getItem('todoList');
+    let savedInProgressList = localStorage.getItem('inProgressList');
+    let savedCompletedList = localStorage.getItem('completedList');
+
     
   }
   
