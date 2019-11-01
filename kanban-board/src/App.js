@@ -33,7 +33,7 @@ class App extends Component {
         completedList: parsedCompletedList
       });
     } else {
-      console.log('no todos')
+      console.log('no todos');
     }
   }
   
