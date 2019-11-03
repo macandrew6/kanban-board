@@ -54,11 +54,13 @@ class App extends Component {
   }
 
   moveTodoRight() {
-
+    // if the current element is the furtest to the left disable the left button
+    // move current selected target to the board on the right
+    // unless it is the last board
   }
 
   moveTodoLeft() {
-
+    
   }
 
   render() {
