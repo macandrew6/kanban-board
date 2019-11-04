@@ -10,9 +10,9 @@ class App extends Component {
 
     this.state = {
       categories: ['todo', 'inProgress', 'completed'],
-      todoList: [],
-      inProgressList: [],
-      completedList: []
+      todoList: [], // one list
+      inProgressList: [], // remove
+      completedList: [] // remove
     };
 
     this.addTodo = this.addTodo.bind(this);
@@ -21,18 +21,18 @@ class App extends Component {
   }
 
   componentDidMount() {
-    let savedTodoList = localStorage.getItem('todoList');
-    let savedInProgressList = localStorage.getItem('inProgressList');
-    let savedCompletedList = localStorage.getItem('completedList');
+    let savedTodoList = localStorage.getItem('todoList'); // combine all lists
+    let savedInProgressList = localStorage.getItem('inProgressList'); // remove
+    let savedCompletedList = localStorage.getItem('completedList'); // remove
 
-    if (savedTodoList && savedInProgressList && savedCompletedList) {
-      let parsedTodoList = JSON.parse(savedTodoList);
-      let parsedInProgressList = JSON.parse(savedInProgressList);
-      let parsedCompletedList = JSON.parse(savedCompletedList);
+    if (savedTodoList && savedInProgressList && savedCompletedList) { // only check one list
+      let parsedTodoList = JSON.parse(savedTodoList); // if list is true parse
+      let parsedInProgressList = JSON.parse(savedInProgressList); // remove
+      let parsedCompletedList = JSON.parse(savedCompletedList); // remove
       this.setState({
-        todoList: parsedTodoList,
-        inProgressList: parsedInProgressList,
-        completedList: parsedCompletedList
+        todoList: parsedTodoList, // one list
+        inProgressList: parsedInProgressList, // remove
+        completedList: parsedCompletedList // remove
       });
     } else {
       console.log('no todos');
@@ -44,15 +44,15 @@ class App extends Component {
     todos.push(todo);
 
     this.setState({
-      todoList: todos
+      todoList: todos // set main list
     }, () => {
-      localStorage.setItem('todoList', JSON.stringify(todos));
-      localStorage.setItem('inProgressList', JSON.stringify(this.state.inProgressList));
-      localStorage.setItem('completedList', JSON.stringify(this.state.completedList));
+      localStorage.setItem('todoList', JSON.stringify(todos)); // save main list
+      localStorage.setItem('inProgressList', JSON.stringify(this.state.inProgressList)); // remove
+      localStorage.setItem('completedList', JSON.stringify(this.state.completedList)); // remove
     });
     console.log(localStorage.getItem('todoList'));
-    console.log(localStorage.getItem('inProgressList'));
-    console.log(localStorage.getItem('completedList'));
+    console.log(localStorage.getItem('inProgressList')); // remove
+    console.log(localStorage.getItem('completedList')); // remove
   }
 
   moveTodoRight(e, id) {
@@ -109,8 +109,10 @@ class App extends Component {
             moveTodoRight={this.moveTodoRight} 
             moveTodoLeft={this.moveTodoLeft}
             todoList={this.filterTodoListItems()}/>
-          <InprogressBoard inProgressList={this.filterInProgressListItems()}/>
-          <CompletedBoard completedList={this.filterCompletedListItems()}/>
+          <InprogressBoard 
+            inProgressList={this.filterInProgressListItems()}/>
+          <CompletedBoard 
+            completedList={this.filterCompletedListItems()}/>
         </div>
         <TodoInput addTodo={this.addTodo}/>
       </div>
