@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import TodoItem from './TodoItem';
+import ListItem from './ListItem';
 
 export default class TodoBoard extends Component {
   render() {
@@ -9,7 +9,7 @@ export default class TodoBoard extends Component {
         <h3>TodoBoard</h3>
         <div>
           {todoList.map((todo, i) => (
-            <TodoItem 
+            <ListItem 
               todo={todo} 
               key={todo.id}
               moveTodoRight={moveTodoRight}
