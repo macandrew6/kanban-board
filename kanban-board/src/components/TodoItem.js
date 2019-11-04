@@ -16,8 +16,8 @@ export default class TodoItem extends Component {
       <div>
         {todo.text}
         <div>
-          <button onClick={(e) => moveTodoLeft(e)}>Left</button>
-          <button onClick={(e) => moveTodoRight(e)}>Right</button>
+          <button onClick={(e) => moveTodoLeft(e)} value="left">Left</button>
+          <button onClick={(e) => moveTodoRight(e)} value="right">Right</button>
         </div>
       </div>
     );

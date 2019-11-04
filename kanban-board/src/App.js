@@ -53,10 +53,11 @@ class App extends Component {
     console.log(localStorage.getItem('completedList'));
   }
 
-  moveTodoRight() {
+  moveTodoRight(e) {
     // if the current element is the furtest to the left disable the left button
     // move current selected target to the board on the right
     // unless it is the last board
+    console.log(e);
   }
 
   moveTodoLeft() {
