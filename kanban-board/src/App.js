@@ -38,14 +38,25 @@ class App extends Component {
     this.setState({
       allListItems: allListItems 
     }, () => {
-      localStorage.setItem('allListItems', JSON.stringify(allListItems)); // save main list
+      localStorage.setItem('allListItems', JSON.stringify(allListItems));
     });
     console.log(localStorage.getItem('allListItems'));
   }
 
   moveTodoRight(e, id) {
-    console.log(id);
-    console.log('move item ', e.currentTarget);
+    const allListItems = JSON.parse(JSON.stringify(this.state.allListItems));
+    const target = allListItems.find(item => item.id === id);
+    for (let i = 0; i < this.state.categories.length; i++) {
+      let category = this.state.categories[i];
+      if (target.category === category) {
+        target.category = this.state.categories[i + 1];
+        break;
+      }
+    }
+    
+    this.setState({
+      allListItems
+    });
   }
 
   moveTodoLeft(e, id) {
@@ -69,7 +80,6 @@ class App extends Component {
 
   render() {
     // const {} = this.state;
-    console.log(this.filterTodoListItems());
     return (
       <div className="App">
         <h2>Kanban board</h2>
