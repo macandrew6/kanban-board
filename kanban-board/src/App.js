@@ -99,7 +99,7 @@ class App extends Component {
   }
 
   render() {
-    const { todoList, inProgressList, completedList } = this.state;
+    // const {} = this.state;
     console.log(this.filterTodoListItems());
     return (
       <div className="App">
@@ -108,9 +108,9 @@ class App extends Component {
           <TodoBoard 
             moveTodoRight={this.moveTodoRight} 
             moveTodoLeft={this.moveTodoLeft}
-            todoList={todoList}/>
-          <InprogressBoard inProgressList={inProgressList}/>
-          <CompletedBoard completedList={completedList}/>
+            todoList={this.filterTodoListItems()}/>
+          <InprogressBoard inProgressList={this.filterInProgressListItems()}/>
+          <CompletedBoard completedList={this.filterCompletedListItems()}/>
         </div>
         <TodoInput addTodo={this.addTodo}/>
       </div>
