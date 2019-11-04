@@ -60,7 +60,19 @@ class App extends Component {
   }
 
   moveTodoLeft(e, id) {
-    console.log('move item', e.target);
+    const allListItems = JSON.parse(JSON.stringify(this.state.allListItems));
+    const target = allListItems.find(item => item.id === id);
+    for (let i = 1; i < this.state.categories.length; i++) {
+      let category = this.state.categories[i];
+      if (target.category === category) {
+        target.category = this.state.categories[i - 1];
+        break;
+      }
+    }
+
+    this.setState({
+      allListItems
+    });
   }
 
   filterTodoListItems() {
