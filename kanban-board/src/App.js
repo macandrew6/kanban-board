@@ -76,15 +76,26 @@ class App extends Component {
     const inProgressList = this.state.inProgressList;
     const inCompletedList = this.state.completedList;
     const allLists = todoList.concat(inProgressList).concat(inCompletedList);
-    console.log(allLists);
+    const copyAllLists = JSON.parse(JSON.stringify(allLists));
+    return copyAllLists.filter(item => item.category === 'todo');
   }
 
   filterInProgressListItems() {
-
+    const todoList = this.state.todoList;
+    const inProgressList = this.state.inProgressList;
+    const inCompletedList = this.state.completedList;
+    const allLists = todoList.concat(inProgressList).concat(inCompletedList);
+    const copyAllLists = JSON.parse(JSON.stringify(allLists));
+    return copyAllLists.filter(item => item.category === 'inProgress');
   }
 
   filterCompletedListItems() {
-
+    const todoList = this.state.todoList;
+    const inProgressList = this.state.inProgressList;
+    const inCompletedList = this.state.completedList;
+    const allLists = todoList.concat(inProgressList).concat(inCompletedList);
+    const copyAllLists = JSON.parse(JSON.stringify(allLists));
+    return copyAllLists.filter(item => item.category === 'completed');
   }
 
   render() {
