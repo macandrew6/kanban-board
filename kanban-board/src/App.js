@@ -46,7 +46,7 @@ class App extends Component {
   moveTodoRight(e, id) {
     const allListItems = JSON.parse(JSON.stringify(this.state.allListItems));
     const target = allListItems.find(item => item.id === id);
-    for (let i = 0; i < this.state.categories.length; i++) {
+    for (let i = 0; i < this.state.categories.length - 1; i++) {
       let category = this.state.categories[i];
       if (target.category === category) {
         target.category = this.state.categories[i + 1];
