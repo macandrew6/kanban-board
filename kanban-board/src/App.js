@@ -56,6 +56,8 @@ class App extends Component {
     
     this.setState({
       allListItems
+    }, () => {
+      localStorage.setItem('allListItems', JSON.stringify(allListItems));
     });
   }
 
@@ -72,6 +74,8 @@ class App extends Component {
 
     this.setState({
       allListItems
+    }, () => {
+      localStorage.setItem('allListItems', JSON.stringify(allListItems));
     });
   }
 
