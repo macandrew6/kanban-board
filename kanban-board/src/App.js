@@ -10,7 +10,7 @@ class App extends Component {
 
     this.state = {
       categories: ['todo', 'inProgress', 'completed'],
-      allListItems: [], // one list
+      allListItems: [], 
     };
 
     this.addTodo = this.addTodo.bind(this);
@@ -19,12 +19,12 @@ class App extends Component {
   }
 
   componentDidMount() {
-    let savedallListItems = localStorage.getItem('allListItems'); // combine all lists
+    let savedallListItems = localStorage.getItem('allListItems');
 
-    if (savedallListItems) { // only check one list
-      let parsedAllListItems = JSON.parse(savedallListItems); // if list is true parse
+    if (savedallListItems) { 
+      let parsedAllListItems = JSON.parse(savedallListItems);
       this.setState({
-        allListItems: parsedAllListItems, // one list
+        allListItems: parsedAllListItems
       });
     } else {
       console.log('no todos');
@@ -36,7 +36,7 @@ class App extends Component {
     allListItems.push(todo);
 
     this.setState({
-      allListItems: allListItems // set main list
+      allListItems: allListItems 
     }, () => {
       localStorage.setItem('allListItems', JSON.stringify(allListItems)); // save main list
     });
@@ -44,18 +44,11 @@ class App extends Component {
   }
 
   moveTodoRight(e, id) {
-    // if the current element is the furtest to the left disable the left button
-    // move current selected target to the board on the right
-    // unless it is the last board
     console.log(id);
-    // const allListItems = JSON.parse(JSON.stringify(this.state.allListItems));
-    // const inProgressList = JSON.parse(JSON.stringify(this.state.inProgressList));
-    // const inCompletedList = JSON.parse(JSON.stringify(this.state.inCompletedList));
-
     console.log('move item ', e.currentTarget);
   }
 
-  moveTodoLeft(e) {
+  moveTodoLeft(e, id) {
     console.log('move item', e.target);
   }
 
@@ -86,8 +79,12 @@ class App extends Component {
             moveTodoLeft={this.moveTodoLeft}
             todoList={this.filterTodoListItems()}/>
           <InprogressBoard 
+            moveTodoRight={this.moveTodoRight}
+            moveTodoLeft={this.moveTodoLeft}
             inProgressList={this.filterInProgressListItems()}/>
           <CompletedBoard 
+            moveTodoRight={this.moveTodoRight}
+            moveTodoLeft={this.moveTodoLeft}
             completedList={this.filterCompletedListItems()}/>
         </div>
         <TodoInput addTodo={this.addTodo}/>
