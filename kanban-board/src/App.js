@@ -70,7 +70,10 @@ class App extends Component {
       <div className="App">
         <h2>Kanban board</h2>
         <div className="kanbanboard-container">
-          <TodoBoard todoList={todoList}/>
+          <TodoBoard 
+            moveTodoRight={this.moveTodoRight} 
+            moveTodoLeft={this.moveTodoLeft}
+            todoList={todoList}/>
           <InprogressBoard inProgressList={inProgressList}/>
           <CompletedBoard completedList={completedList}/>
         </div>

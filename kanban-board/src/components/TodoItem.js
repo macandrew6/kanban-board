@@ -5,19 +5,19 @@ export default class TodoItem extends Component {
     super();
 
     this.state = {
-      
+
     };
   }
   
   render() {
-    const { todo } = this.props;
-
+    const { todo, moveTodoLeft, moveTodoRight } = this.props;
+    console.log(todo);
     return (
       <div>
         {todo.text}
         <div>
-          <button>Left</button>
-          <button>Right</button>
+          <button onClick={(e) => moveTodoLeft(e)}>Left</button>
+          <button moveTodoRight={(e) => moveTodoRight(e)}>Right</button>
         </div>
       </div>
     );
