@@ -10,9 +10,7 @@ class App extends Component {
 
     this.state = {
       categories: ['todo', 'inProgress', 'completed'],
-      todoList: [], // one list
-      inProgressList: [], // remove
-      completedList: [] // remove
+      allListItems: [], // one list
     };
 
     this.addTodo = this.addTodo.bind(this);
@@ -21,18 +19,12 @@ class App extends Component {
   }
 
   componentDidMount() {
-    let savedTodoList = localStorage.getItem('todoList'); // combine all lists
-    let savedInProgressList = localStorage.getItem('inProgressList'); // remove
-    let savedCompletedList = localStorage.getItem('completedList'); // remove
+    let savedallListItems = localStorage.getItem('allListItems'); // combine all lists
 
-    if (savedTodoList && savedInProgressList && savedCompletedList) { // only check one list
-      let parsedTodoList = JSON.parse(savedTodoList); // if list is true parse
-      let parsedInProgressList = JSON.parse(savedInProgressList); // remove
-      let parsedCompletedList = JSON.parse(savedCompletedList); // remove
+    if (savedallListItems) { // only check one list
+      let parsedAllListItems = JSON.parse(savedallListItems); // if list is true parse
       this.setState({
-        todoList: parsedTodoList, // one list
-        inProgressList: parsedInProgressList, // remove
-        completedList: parsedCompletedList // remove
+        allListItems: parsedAllListItems, // one list
       });
     } else {
       console.log('no todos');
@@ -40,19 +32,15 @@ class App extends Component {
   }
   
   addTodo(todo) {
-    const todos = JSON.parse(JSON.stringify(this.state.todoList));
-    todos.push(todo);
+    const allListItems = JSON.parse(JSON.stringify(this.state.allListItems));
+    allListItems.push(todo);
 
     this.setState({
-      todoList: todos // set main list
+      allListItems: allListItems // set main list
     }, () => {
-      localStorage.setItem('todoList', JSON.stringify(todos)); // save main list
-      localStorage.setItem('inProgressList', JSON.stringify(this.state.inProgressList)); // remove
-      localStorage.setItem('completedList', JSON.stringify(this.state.completedList)); // remove
+      localStorage.setItem('allListItems', JSON.stringify(allListItems)); // save main list
     });
-    console.log(localStorage.getItem('todoList'));
-    console.log(localStorage.getItem('inProgressList')); // remove
-    console.log(localStorage.getItem('completedList')); // remove
+    console.log(localStorage.getItem('allListItems'));
   }
 
   moveTodoRight(e, id) {
@@ -60,7 +48,7 @@ class App extends Component {
     // move current selected target to the board on the right
     // unless it is the last board
     console.log(id);
-    // const todoList = JSON.parse(JSON.stringify(this.state.todoList));
+    // const allListItems = JSON.parse(JSON.stringify(this.state.allListItems));
     // const inProgressList = JSON.parse(JSON.stringify(this.state.inProgressList));
     // const inCompletedList = JSON.parse(JSON.stringify(this.state.inCompletedList));
 
@@ -72,29 +60,17 @@ class App extends Component {
   }
 
   filterTodoListItems() {
-    const todoList = this.state.todoList;
-    const inProgressList = this.state.inProgressList;
-    const inCompletedList = this.state.completedList;
-    const allLists = todoList.concat(inProgressList).concat(inCompletedList);
-    const copyAllLists = JSON.parse(JSON.stringify(allLists));
+    const copyAllLists = JSON.parse(JSON.stringify(this.state.allListItems));
     return copyAllLists.filter(item => item.category === 'todo');
   }
 
   filterInProgressListItems() {
-    const todoList = this.state.todoList;
-    const inProgressList = this.state.inProgressList;
-    const inCompletedList = this.state.completedList;
-    const allLists = todoList.concat(inProgressList).concat(inCompletedList);
-    const copyAllLists = JSON.parse(JSON.stringify(allLists));
+    const copyAllLists = JSON.parse(JSON.stringify(this.state.allListItems));
     return copyAllLists.filter(item => item.category === 'inProgress');
   }
 
   filterCompletedListItems() {
-    const todoList = this.state.todoList;
-    const inProgressList = this.state.inProgressList;
-    const inCompletedList = this.state.completedList;
-    const allLists = todoList.concat(inProgressList).concat(inCompletedList);
-    const copyAllLists = JSON.parse(JSON.stringify(allLists));
+    const copyAllLists = JSON.parse(JSON.stringify(this.state.allListItems));
     return copyAllLists.filter(item => item.category === 'completed');
   }
 
