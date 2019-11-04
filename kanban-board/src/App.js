@@ -16,6 +16,8 @@ class App extends Component {
     };
 
     this.addTodo = this.addTodo.bind(this);
+    this.moveTodoLeft = this.moveTodoLeft.bind(this);
+    this.moveTodoRight = this.moveTodoRight.bind(this);
   }
 
   componentDidMount() {
@@ -53,20 +55,41 @@ class App extends Component {
     console.log(localStorage.getItem('completedList'));
   }
 
-  moveTodoRight(e) {
+  moveTodoRight(e, id) {
     // if the current element is the furtest to the left disable the left button
     // move current selected target to the board on the right
     // unless it is the last board
-    console.log(e);
+    console.log(id);
+    // const todoList = JSON.parse(JSON.stringify(this.state.todoList));
+    // const inProgressList = JSON.parse(JSON.stringify(this.state.inProgressList));
+    // const inCompletedList = JSON.parse(JSON.stringify(this.state.inCompletedList));
+
+    console.log('move item ', e.currentTarget);
   }
 
-  moveTodoLeft() {
-    
+  moveTodoLeft(e) {
+    console.log('move item', e.target);
+  }
+
+  filterTodoListItems() {
+    const todoList = this.state.todoList;
+    const inProgressList = this.state.inProgressList;
+    const inCompletedList = this.state.completedList;
+    const allLists = todoList.concat(inProgressList).concat(inCompletedList);
+    console.log(allLists);
+  }
+
+  filterInProgressListItems() {
+
+  }
+
+  filterCompletedListItems() {
+
   }
 
   render() {
     const { todoList, inProgressList, completedList } = this.state;
-    
+    console.log(this.filterTodoListItems());
     return (
       <div className="App">
         <h2>Kanban board</h2>
