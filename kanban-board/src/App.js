@@ -54,8 +54,11 @@ class App extends Component {
     });
   }
 
-  editTodo(id, todo) {
-
+  editTodo(id, updatedText) {
+    const allListItems = JSON.parse(JSON.stringify(this.state.allListItems));
+    const updatingListItem = allListItems.find(item => item.id === id);
+    updatingListItem.text = updatedText;
+    
   }
 
   moveTodoRight(e, id) {
