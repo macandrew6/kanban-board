@@ -40,7 +40,21 @@ class App extends Component {
     }, () => {
       localStorage.setItem('allListItems', JSON.stringify(allListItems));
     });
-    console.log(localStorage.getItem('allListItems'));
+  }
+
+  deleteTodo(id) {
+    const allListItems = JSON.parse(JSON.stringify(this.state.allListItems));
+    const updatedListItems = allListItems.filter(item => item.id !== id);
+
+    this.setState({
+      allListItems: updatedListItems
+    }, () => {
+      localStorage.setItem('allListItems', JSON.stringify(updatedListItems));
+    });
+  }
+
+  editTodo(id, todo) {
+
   }
 
   moveTodoRight(e, id) {
