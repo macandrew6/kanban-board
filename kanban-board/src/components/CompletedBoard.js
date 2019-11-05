@@ -3,7 +3,11 @@ import ListItem from './ListItem';
 
 export default class CompletedBoard extends Component {
   render() {
-    const { completedList, moveTodoLeft, moveTodoRight } = this.props;
+    const { 
+      completedList, 
+      moveTodoLeft, 
+      moveTodoRight, 
+      deleteTodo } = this.props;
 
     return (
       <div className="completedboard-container board">
@@ -13,6 +17,7 @@ export default class CompletedBoard extends Component {
             <ListItem
               todo={completed}
               key={completed.id}
+              deleteTodo={deleteTodo}
               moveTodoRight={moveTodoRight}
               moveTodoLeft={moveTodoLeft} />
           ))}

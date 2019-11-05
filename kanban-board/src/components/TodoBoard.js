@@ -3,7 +3,11 @@ import ListItem from './ListItem';
 
 export default class TodoBoard extends Component {
   render() {
-    const { todoList, moveTodoRight, moveTodoLeft } = this.props;
+    const { 
+      todoList, 
+      moveTodoRight, 
+      moveTodoLeft, 
+      deleteTodo } = this.props;
     return (
       <div className="todoboard-container board">
         <h3>TodoBoard</h3>
@@ -12,6 +16,7 @@ export default class TodoBoard extends Component {
             <ListItem 
               todo={todo} 
               key={todo.id}
+              deleteTodo={deleteTodo}
               moveTodoRight={moveTodoRight}
               moveTodoLeft={moveTodoLeft} />
           ))}

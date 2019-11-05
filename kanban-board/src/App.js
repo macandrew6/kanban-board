@@ -14,6 +14,7 @@ class App extends Component {
     };
 
     this.addTodo = this.addTodo.bind(this);
+    this.deleteTodo = this.deleteTodo.bind(this);
     this.moveTodoLeft = this.moveTodoLeft.bind(this);
     this.moveTodoRight = this.moveTodoRight.bind(this);
   }
@@ -42,7 +43,7 @@ class App extends Component {
     });
   }
 
-  deleteTodo(id) {
+  deleteTodo(e, id) {
     const allListItems = JSON.parse(JSON.stringify(this.state.allListItems));
     const updatedListItems = allListItems.filter(item => item.id !== id);
 
@@ -117,14 +118,17 @@ class App extends Component {
           <TodoBoard 
             moveTodoRight={this.moveTodoRight} 
             moveTodoLeft={this.moveTodoLeft}
+            deleteTodo={this.deleteTodo}
             todoList={this.filterTodoListItems()}/>
           <InprogressBoard 
             moveTodoRight={this.moveTodoRight}
             moveTodoLeft={this.moveTodoLeft}
+            deleteTodo={this.deleteTodo}
             inProgressList={this.filterInProgressListItems()}/>
           <CompletedBoard 
             moveTodoRight={this.moveTodoRight}
             moveTodoLeft={this.moveTodoLeft}
+            deleteTodo={this.deleteTodo}
             completedList={this.filterCompletedListItems()}/>
         </div>
         <TodoInput addTodo={this.addTodo}/>

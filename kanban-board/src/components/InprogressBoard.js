@@ -3,7 +3,11 @@ import ListItem from './ListItem';
 
 export default class InprogressBoard extends Component {
   render() {
-    const { inProgressList, moveTodoLeft, moveTodoRight } = this.props;
+    const { 
+      inProgressList, 
+      moveTodoLeft, 
+      moveTodoRight, 
+      deleteTodo } = this.props;
 
     return (
       <div className="inprogressboard-container board">
@@ -13,6 +17,7 @@ export default class InprogressBoard extends Component {
             <ListItem
               todo={inProgress}
               key={inProgress.id}
+              deleteTodo={deleteTodo}
               moveTodoRight={moveTodoRight}
               moveTodoLeft={moveTodoLeft} />
           ))}
