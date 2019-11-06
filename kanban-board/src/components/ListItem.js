@@ -5,9 +5,11 @@ export default class ListItem extends Component {
     super();
 
     this.state = {
-      
+      listItemText: ''
     };
   }
+
+  
   
   render() {
     const { todo, moveTodoLeft, moveTodoRight, deleteTodo } = this.props;
