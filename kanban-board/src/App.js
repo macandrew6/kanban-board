@@ -3,6 +3,7 @@ import TodoBoard from './components/TodoBoard';
 import InprogressBoard from './components/InprogressBoard';
 import CompletedBoard from './components/CompletedBoard';
 import TodoInput from './components/TodoInput';
+import Modal from './components/modal/modal';
 
 class App extends Component {
   constructor() {
@@ -11,6 +12,7 @@ class App extends Component {
     this.state = {
       categories: ['todo', 'inProgress', 'completed'],
       allListItems: [], 
+      show: false
     };
 
     this.addTodo = this.addTodo.bind(this);
@@ -58,7 +60,14 @@ class App extends Component {
     const allListItems = JSON.parse(JSON.stringify(this.state.allListItems));
     const updatingListItem = allListItems.find(item => item.id === id);
     updatingListItem.text = updatedText;
-    
+
+  }
+
+  showModal() {
+    this.setState({
+      ...this.state,
+      show: !this.state.show
+    })
   }
 
   moveTodoRight(e, id) {
@@ -134,6 +143,7 @@ class App extends Component {
             deleteTodo={this.deleteTodo}
             completedList={this.filterCompletedListItems()}/>
         </div>
+        <Modal show={this.state.show}></Modal>
         <TodoInput addTodo={this.addTodo}/>
       </div>
     );
