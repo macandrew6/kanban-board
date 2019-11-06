@@ -5,7 +5,7 @@ export default class ListItem extends Component {
     super();
 
     this.state = {
-
+      
     };
   }
   
