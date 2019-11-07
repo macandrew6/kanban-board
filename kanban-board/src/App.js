@@ -58,6 +58,9 @@ class App extends Component {
   }
 
   editTodo(id, updatedText) {
+    // need id
+    // need todo 
+    // need alltodos
     const allListItems = JSON.parse(JSON.stringify(this.state.allListItems));
     const updatingListItem = allListItems.find(item => item.id === id);
     updatingListItem.text = updatedText;
@@ -65,6 +68,8 @@ class App extends Component {
   }
 
   toggleModal() {
+    // potentially pass id here
+    
     this.setState({
       ...this.state,
       show: !this.state.show
