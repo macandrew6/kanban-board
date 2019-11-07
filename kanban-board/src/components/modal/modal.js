@@ -2,8 +2,8 @@ import React from 'react';
 
 export default class Modal extends React.Component {
   onClose(e) {
-    if (this.props.onClose) {
-      this.props.onClose(e);
+    if (this.props.toggleModal) {
+      this.props.toggleModal(e);
     }
   }
   
@@ -14,7 +14,7 @@ export default class Modal extends React.Component {
     return (
       <div>
         <div>
-          <button onClick={(e) => this.props.toggleModal(e)}>close</button>
+          <button onClick={(e) => this.onClose(e)}>close</button>
         </div>
         Hello Modal!
       </div>
