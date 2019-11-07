@@ -8,7 +8,6 @@ export default class TodoBoard extends Component {
       moveTodoRight, 
       moveTodoLeft, 
       deleteTodo,
-      show,
       toggleModal } = this.props;
     return (
       <div className="todoboard-container board">
@@ -21,7 +20,6 @@ export default class TodoBoard extends Component {
               deleteTodo={deleteTodo}
               moveTodoRight={moveTodoRight}
               moveTodoLeft={moveTodoLeft}
-              show={show}
               toggleModal={toggleModal} />
           ))}
         </div>

@@ -17,8 +17,8 @@ export default class ListItem extends Component {
       moveTodoLeft, 
       moveTodoRight, 
       deleteTodo,
-      show,
       toggleModal } = this.props;
+
     return (
       <div>
         {todo.text}
