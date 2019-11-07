@@ -7,7 +7,9 @@ export default class InprogressBoard extends Component {
       inProgressList, 
       moveTodoLeft, 
       moveTodoRight, 
-      deleteTodo } = this.props;
+      deleteTodo,
+      show,
+      toggleModal } = this.props;
 
     return (
       <div className="inprogressboard-container board">
@@ -19,7 +21,9 @@ export default class InprogressBoard extends Component {
               key={inProgress.id}
               deleteTodo={deleteTodo}
               moveTodoRight={moveTodoRight}
-              moveTodoLeft={moveTodoLeft} />
+              moveTodoLeft={moveTodoLeft}
+              show={show}
+              toggleModal={toggleModal} />
           ))}
         </div>
       </div>

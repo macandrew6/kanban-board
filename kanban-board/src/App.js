@@ -63,7 +63,7 @@ class App extends Component {
 
   }
 
-  showModal() {
+  toggleModal() {
     this.setState({
       ...this.state,
       show: !this.state.show
@@ -131,19 +131,27 @@ class App extends Component {
             moveTodoRight={this.moveTodoRight} 
             moveTodoLeft={this.moveTodoLeft}
             deleteTodo={this.deleteTodo}
+            onClose={this.toggleModal}
+            show={this.state.show}
             todoList={this.filterTodoListItems()}/>
           <InprogressBoard 
             moveTodoRight={this.moveTodoRight}
             moveTodoLeft={this.moveTodoLeft}
             deleteTodo={this.deleteTodo}
+            onClose={this.toggleModal}
+            show={this.state.show}
             inProgressList={this.filterInProgressListItems()}/>
           <CompletedBoard 
             moveTodoRight={this.moveTodoRight}
             moveTodoLeft={this.moveTodoLeft}
             deleteTodo={this.deleteTodo}
+            onClose={this.toggleModal}
+            show={this.state.show}
             completedList={this.filterCompletedListItems()}/>
         </div>
-        <Modal show={this.state.show}></Modal>
+        <Modal 
+          onClose={this.toggleModal}
+          show={this.state.show}></Modal>
         <TodoInput addTodo={this.addTodo}/>
       </div>
     );

@@ -12,7 +12,13 @@ export default class ListItem extends Component {
   
   
   render() {
-    const { todo, moveTodoLeft, moveTodoRight, deleteTodo } = this.props;
+    const { 
+      todo, 
+      moveTodoLeft, 
+      moveTodoRight, 
+      deleteTodo,
+      show,
+      toggleModal } = this.props;
     return (
       <div>
         {todo.text}
