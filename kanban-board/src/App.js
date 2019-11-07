@@ -17,6 +17,7 @@ class App extends Component {
 
     this.addTodo = this.addTodo.bind(this);
     this.deleteTodo = this.deleteTodo.bind(this);
+    this.toggleModal = this.toggleModal.bind(this);
     this.moveTodoLeft = this.moveTodoLeft.bind(this);
     this.moveTodoRight = this.moveTodoRight.bind(this);
   }
@@ -122,7 +123,6 @@ class App extends Component {
   }
 
   render() {
-    // const {} = this.state;
     return (
       <div className="App">
         <h2>Kanban board</h2>
@@ -131,23 +131,23 @@ class App extends Component {
             moveTodoRight={this.moveTodoRight} 
             moveTodoLeft={this.moveTodoLeft}
             deleteTodo={this.deleteTodo}
-            onClose={this.toggleModal}
+            toggleModal={this.toggleModal}
             todoList={this.filterTodoListItems()}/>
           <InprogressBoard 
             moveTodoRight={this.moveTodoRight}
             moveTodoLeft={this.moveTodoLeft}
             deleteTodo={this.deleteTodo}
-            onClose={this.toggleModal}
+            toggleModal={this.toggleModal}
             inProgressList={this.filterInProgressListItems()}/>
           <CompletedBoard 
             moveTodoRight={this.moveTodoRight}
             moveTodoLeft={this.moveTodoLeft}
             deleteTodo={this.deleteTodo}
-            onClose={this.toggleModal}
+            toggleModal={this.toggleModal}
             completedList={this.filterCompletedListItems()}/>
         </div>
         <Modal 
-          onClose={this.toggleModal}
+          toggleModal={this.toggleModal}
           show={this.state.show}>
         </Modal>
         <TodoInput addTodo={this.addTodo}/>

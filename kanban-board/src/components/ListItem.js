@@ -8,8 +8,6 @@ export default class ListItem extends Component {
       listItemText: ''
     };
   }
-
-  
   
   render() {
     const { 
@@ -26,7 +24,7 @@ export default class ListItem extends Component {
           <button onClick={(e) => moveTodoLeft(e, todo.id)} value="left">Left</button>
           <button onClick={(e) => moveTodoRight(e, todo.id)} value="right">Right</button>
           <button onClick={(e) => deleteTodo(e, todo.id)}>Delete</button>
-          <button>Edit</button>
+          <button onClick={(e) => toggleModal(e)}>Edit</button>
         </div>
       </div>
     );
