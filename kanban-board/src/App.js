@@ -62,14 +62,17 @@ class App extends Component {
     // need id
     // need todo 
     // need alltodos
+    console.log(updatedText);
     const allListItems = JSON.parse(JSON.stringify(this.state.allListItems));
     const updatingListItem = allListItems.find(item => item.id === id);
     updatingListItem.text = updatedText;
+
+    this.setState({
+      allListItems: allListItems
+    })
   }
 
   toggleModal(e, id) {
-    // potentially pass id here
-    
     this.setState({
       ...this.state,
       editingItemId: id,

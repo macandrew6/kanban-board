@@ -25,6 +25,7 @@ export default class Modal extends React.Component {
     e.preventDefault();
     const id = this.props.editingTodo.id;
     const updatedText = this.state.itemText;
+    console.log(id, updatedText);
     this.props.editTodo(id, updatedText);
   }
   
@@ -38,11 +39,11 @@ export default class Modal extends React.Component {
       <div className="modal-container">
         <div className="modal">
           <button onClick={(e) => this.onClose(e)}>close</button>
-          <form>
+          <form onSubmit={(e) => this.handleSubmit(e)}>
             <input 
               type="text" 
               onChange={e => this.handleChange(e)}
-              value={editingTodo.text}/>
+              value={this.props.editingTodo.text}/>
             <button type="submit">Edit</button>
           </form>
         </div>
