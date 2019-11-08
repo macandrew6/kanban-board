@@ -156,8 +156,8 @@ class App extends Component {
             completedList={this.filterCompletedListItems()}/>
         </div>
         <Modal 
+          editingTodo={editingTodo}
           editTodo={this.editTodo}
-          editingId={this.state.editingItemId}
           toggleModal={this.toggleModal}
           show={this.state.show}>
         </Modal>

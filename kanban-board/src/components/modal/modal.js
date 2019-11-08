@@ -16,6 +16,8 @@ export default class Modal extends React.Component {
   }
   
   render() {
+    const { editingTodo, editTodo } = this.props;
+    console.log(editingTodo);
     if (!this.props.show) {
       return null;
     }
