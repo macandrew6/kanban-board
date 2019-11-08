@@ -1,6 +1,14 @@
 import React from 'react';
 
 export default class Modal extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+
+    };
+  }
+  
   onClose(e) {
     if (this.props.toggleModal) {
       this.props.toggleModal(e);

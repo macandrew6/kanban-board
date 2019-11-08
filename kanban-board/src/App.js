@@ -12,7 +12,8 @@ class App extends Component {
     this.state = {
       categories: ['todo', 'inProgress', 'completed'],
       allListItems: [], 
-      show: false
+      show: false,
+      editingItemId: 0
     };
 
     this.addTodo = this.addTodo.bind(this);
@@ -64,14 +65,14 @@ class App extends Component {
     const allListItems = JSON.parse(JSON.stringify(this.state.allListItems));
     const updatingListItem = allListItems.find(item => item.id === id);
     updatingListItem.text = updatedText;
-
   }
 
-  toggleModal() {
+  toggleModal(e, id) {
     // potentially pass id here
     
     this.setState({
       ...this.state,
+      id: id,
       show: !this.state.show
     })
   }
@@ -128,6 +129,9 @@ class App extends Component {
   }
 
   render() {
+    const editingTodo = this.state.allListItems.find(item => 
+      item.id === this.state.editingItemId);
+
     return (
       <div className="App">
         <h2>Kanban board</h2>
@@ -152,6 +156,8 @@ class App extends Component {
             completedList={this.filterCompletedListItems()}/>
         </div>
         <Modal 
+          editTodo={this.editTodo}
+          editingId={this.state.editingItemId}
           toggleModal={this.toggleModal}
           show={this.state.show}>
         </Modal>
