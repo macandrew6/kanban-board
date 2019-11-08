@@ -5,7 +5,7 @@ export default class Modal extends React.Component {
     super(props);
 
     this.state = {
-
+      itemText: ''
     };
   }
   
@@ -13,6 +13,19 @@ export default class Modal extends React.Component {
     if (this.props.toggleModal) {
       this.props.toggleModal(e);
     }
+  }
+
+  handleChange(e) {
+    this.setState({
+      itemText: e.target.value
+    });
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    const id = this.props.editingTodo.id;
+    const updatedText = this.state.itemText;
+    this.props.editTodo(id, updatedText);
   }
   
   render() {
@@ -30,6 +43,7 @@ export default class Modal extends React.Component {
               type="text" 
               onChange={e => this.handleChange(e)}
               value={editingTodo.text}/>
+            <button type="submit">Edit</button>
           </form>
         </div>
       </div>

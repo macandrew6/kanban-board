@@ -39,7 +39,7 @@ body {
 .modal {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   background: white;
   width: 300px;
