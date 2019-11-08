@@ -16,17 +16,22 @@ export default class Modal extends React.Component {
   }
   
   render() {
-    const { editingTodo, editTodo } = this.props;
+    const { editingTodo } = this.props;
     console.log(editingTodo);
     if (!this.props.show) {
       return null;
     }
     return (
-      <div>
-        <div>
+      <div className="modal-container">
+        <div className="modal">
           <button onClick={(e) => this.onClose(e)}>close</button>
+          <form>
+            <input 
+              type="text" 
+              onChange={e => this.handleChange(e)}
+              value={editingTodo.text}/>
+          </form>
         </div>
-        Hello Modal!
       </div>
     );
   }

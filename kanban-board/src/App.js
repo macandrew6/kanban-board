@@ -72,7 +72,7 @@ class App extends Component {
     
     this.setState({
       ...this.state,
-      id: id,
+      editingItemId: id,
       show: !this.state.show
     })
   }
@@ -131,7 +131,6 @@ class App extends Component {
   render() {
     const editingTodo = this.state.allListItems.find(item => 
       item.id === this.state.editingItemId);
-
     return (
       <div className="App">
         <h2>Kanban board</h2>
