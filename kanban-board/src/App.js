@@ -13,6 +13,7 @@ class App extends Component {
       categories: ['todo', 'inProgress', 'completed'],
       allListItems: [], 
       show: false,
+      editingTodo: {text: '', id: 0, category: ''},
       editingItemId: 0
     };
 
@@ -74,9 +75,12 @@ class App extends Component {
   }
 
   toggleModal(e, id) {
+    const editingTodo = this.state.allListItems.find(item =>
+      item.id === id);
+
     this.setState({
       ...this.state,
-      editingItemId: id,
+      editingTodo: editingTodo,
       show: !this.state.show
     })
   }
@@ -133,9 +137,6 @@ class App extends Component {
   }
 
   render() {
-    const editingTodo = this.state.allListItems.find(item => 
-      item.id === this.state.editingItemId);
-      console.log(editingTodo)
     return (
       <div className="App">
         <h2>Kanban board</h2>
@@ -160,7 +161,7 @@ class App extends Component {
             completedList={this.filterCompletedListItems()}/>
         </div>
         <Modal 
-          editingTodo={editingTodo ? editingTodo : ''}
+          editingTodo={this.state.editingTodo}
           editTodo={this.editTodo}
           toggleModal={this.toggleModal}
           show={this.state.show}>
