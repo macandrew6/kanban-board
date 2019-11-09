@@ -18,6 +18,7 @@ class App extends Component {
 
     this.addTodo = this.addTodo.bind(this);
     this.deleteTodo = this.deleteTodo.bind(this);
+    this.editTodo = this.editTodo.bind(this);
     this.toggleModal = this.toggleModal.bind(this);
     this.moveTodoLeft = this.moveTodoLeft.bind(this);
     this.moveTodoRight = this.moveTodoRight.bind(this);
@@ -134,6 +135,7 @@ class App extends Component {
   render() {
     const editingTodo = this.state.allListItems.find(item => 
       item.id === this.state.editingItemId);
+      console.log(editingTodo)
     return (
       <div className="App">
         <h2>Kanban board</h2>
@@ -158,7 +160,7 @@ class App extends Component {
             completedList={this.filterCompletedListItems()}/>
         </div>
         <Modal 
-          editingTodo={editingTodo}
+          editingTodo={editingTodo ? editingTodo : ''}
           editTodo={this.editTodo}
           toggleModal={this.toggleModal}
           show={this.state.show}>
