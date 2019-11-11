@@ -9,7 +9,7 @@ export default class Modal extends React.Component {
     };
   }
 
-  static getDerivedStateFromProps(props, state) {
+  static getDerivedStateFromProps(props) {
     return {
       itemText: props.editingTodo ? props.editingTodo.text : ''  
     }
@@ -36,7 +36,6 @@ export default class Modal extends React.Component {
   }
   
   render() {
-    // const { editingTodo } = this.props;
     if (!this.props.show) {
       return null;
     }
