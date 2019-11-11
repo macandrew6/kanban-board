@@ -40,13 +40,10 @@ export default class Modal extends React.Component {
     if (!this.props.show) {
       return null;
     }
-    console.log(this.props.editingTodo);
-    console.log(this.state.itemText);
     return (
       <div className="modal-container">
         <div className="modal">
           <button onClick={(e) => this.onClose(e)}>close</button>
-          {this.props.editingTodo.text}
           <form onSubmit={(e) => this.handleSubmit(e)}>
             <input 
               type="text" 
