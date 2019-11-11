@@ -11,7 +11,7 @@ class App extends Component {
 
     this.state = {
       categories: ['todo', 'inProgress', 'completed'],
-      allListItems: [], 
+      allListItems: [], // normalizing => todoIds : [id, id, id], todoById : { [id] : {}}
       show: false,
       editingTodo: {text: '', id: 0, category: ''},
       editingItemId: 0
@@ -105,6 +105,7 @@ class App extends Component {
 
   moveTodoLeft(e, id) {
     const allListItems = JSON.parse(JSON.stringify(this.state.allListItems));
+    // const allListItems = this.state.allListItems.slice();
     const target = allListItems.find(item => item.id === id);
     for (let i = 1; i < this.state.categories.length; i++) {
       let category = this.state.categories[i];
@@ -160,12 +161,12 @@ class App extends Component {
             toggleModal={this.toggleModal}
             completedList={this.filterCompletedListItems()}/>
         </div>
-        <Modal 
-          editingTodo={this.state.editingTodo}
-          editTodo={this.editTodo}
-          toggleModal={this.toggleModal}
-          show={this.state.show}>
-        </Modal>
+          <Modal 
+            editingTodo={this.state.editingTodo}
+            editTodo={this.editTodo}
+            toggleModal={this.toggleModal}
+            show={this.state.show}>
+          </Modal>
         <TodoInput addTodo={this.addTodo}/>
       </div>
     );

@@ -5,8 +5,14 @@ export default class Modal extends React.Component {
     super(props);
 
     this.state = {
-      itemText: ''
+      itemText: this.props.editingTodo.text
     };
+  }
+
+  static getDerivedStateFromProps(props, state) {
+    return {
+      itemText: props.editingTodo ? props.editingTodo.text : ''  
+    }
   }
   
   onClose(e) {
@@ -34,6 +40,7 @@ export default class Modal extends React.Component {
     if (!this.props.show) {
       return null;
     }
+    console.log(this.props.editingTodo);
     console.log(this.state.itemText);
     return (
       <div className="modal-container">
