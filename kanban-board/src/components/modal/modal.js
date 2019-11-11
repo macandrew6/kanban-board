@@ -9,12 +9,6 @@ export default class Modal extends React.Component {
     };
   }
 
-  static getDerivedStateFromProps(props) {
-    return {
-      itemText: props.editingTodo ? props.editingTodo.text : ''  
-    }
-  }
-  
   onClose(e) {
     if (this.props.toggleModal) {
       this.props.toggleModal(e);

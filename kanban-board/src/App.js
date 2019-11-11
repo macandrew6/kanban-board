@@ -71,6 +71,8 @@ class App extends Component {
 
     this.setState({
       allListItems: allListItems
+    }, () => {
+      localStorage.setItem('allListItems', JSON.stringify(allListItems));
     })
   }
 
@@ -161,12 +163,14 @@ class App extends Component {
             toggleModal={this.toggleModal}
             completedList={this.filterCompletedListItems()}/>
         </div>
+        {this.state.show &&
           <Modal 
             editingTodo={this.state.editingTodo}
             editTodo={this.editTodo}
             toggleModal={this.toggleModal}
             show={this.state.show}>
           </Modal>
+        }
         <TodoInput addTodo={this.addTodo}/>
       </div>
     );
