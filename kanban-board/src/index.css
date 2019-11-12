@@ -21,11 +21,8 @@ body {
   width: 200px;
   min-height: 300px;
   text-align: center;
-  background-color: white;
-}
-
-.kanbanboard-container .board h3 {
   color: white;
+  background-color: rgba(46, 37, 37, 0.664);
 }
 
 /* List Item */
