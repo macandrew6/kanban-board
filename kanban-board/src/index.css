@@ -24,6 +24,10 @@ body {
   background-color: white;
 }
 
+.kanbanboard-container .board h3 {
+  color: white;
+}
+
 /* List Item */
 
 .list-item {
