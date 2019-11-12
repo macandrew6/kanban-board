@@ -24,6 +24,26 @@ body {
   background-color: white;
 }
 
+/* List Item */
+
+.list-item {
+  margin: 0 5px 5px 5px;
+  padding: 5px;
+  border: 1px solid black;
+  border-radius: 10px;
+  background-color: rgb(94, 118, 163);
+}
+
+.list-item-button-container button {
+  width: 100px;
+  padding: 5px;
+  background-color: rgb(216, 198, 43);
+}
+
+.list-item-button-container button:hover {
+  background-color: rgb(143, 132, 32);
+}
+
 /* Modal */
 
 .modal-container {
