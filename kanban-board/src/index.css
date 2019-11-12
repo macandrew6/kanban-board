@@ -26,18 +26,30 @@ body {
 }
 
 /* Input Form */
+.input-form-container {
+  margin-top: 3px;
+}
 
 .input-form-container input {
   color: white;
   background-color: rgba(23, 38, 88, 0.774);
   border: none;
-  padding: 5px;
+  font-size: 15px;
+  padding: 7px;
 }
 
 .input-form-container button {
+  margin-left: 3px;
   color: white;
   background-color: darkkhaki;
-  padding: 5px;
+  padding: 7px;
+  border: none;
+  border-radius: 5px;
+}
+
+.input-form-container button:hover {
+  background-color: rgb(110, 107, 61);
+  color: black;
 }
 
 /* List Item */
