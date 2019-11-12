@@ -28,7 +28,7 @@ export default class TodoInput extends Component {
   
   render() {
     return (
-      <div>
+      <div className="input-form-container">
         <form onSubmit={e => this.handleSubmitInput(e)}>
           <input
             type="text"

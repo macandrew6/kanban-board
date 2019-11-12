@@ -25,6 +25,21 @@ body {
   background-color: rgba(46, 37, 37, 0.664);
 }
 
+/* Input Form */
+
+.input-form-container input {
+  color: white;
+  background-color: rgba(23, 38, 88, 0.774);
+  border: none;
+  padding: 5px;
+}
+
+.input-form-container button {
+  color: white;
+  background-color: darkkhaki;
+  padding: 5px;
+}
+
 /* List Item */
 
 .list-item {
