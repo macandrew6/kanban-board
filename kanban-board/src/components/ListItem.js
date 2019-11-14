@@ -11,7 +11,9 @@ export default class ListItem extends Component {
 
     return (
       <div className="list-item">
-        {todo.text}
+        <div>
+          <p className="todo-text">{todo.text}</p>
+        </div>
         <div className="list-item-button-container">
           <button onClick={(e) => moveTodoLeft(e, todo.id)} value="left">Left</button>
           <button onClick={(e) => moveTodoRight(e, todo.id)} value="right">Right</button>
