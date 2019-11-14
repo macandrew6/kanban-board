@@ -16,6 +16,10 @@ body {
   align-items: center;
 }
 
+.App h2 {
+  color: white;
+}
+
 .kanbanboard-container {
   display: flex;
 }
@@ -99,7 +103,7 @@ body {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  background: rgb(30, 29, 78);
+  background: rgb(81, 79, 200);
   width: 300px;
   height: 300px;
   padding: 20px;
