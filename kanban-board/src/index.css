@@ -1,8 +1,11 @@
 body {
   margin: 0;
-  padding: 0;
+  padding: 30px;
   font-family: sans-serif;
   background-color: cornflowerblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .App {
@@ -43,7 +46,7 @@ body {
   margin-left: 3px;
   color: white;
   background-color: darkkhaki;
-  padding: 7px;
+  padding: 9px;
   border: none;
   border-radius: 5px;
 }
@@ -82,7 +85,7 @@ body {
 .modal-container {
   position: fixed;
   display: flex;
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.5);
   top: 0;
   right: 0;
   bottom: 0;
@@ -96,7 +99,29 @@ body {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  background: white;
+  background: rgb(30, 29, 78);
   width: 300px;
   height: 300px;
+  padding: 20px;
+}
+
+.modal p {
+  color: white;
+}
+
+.modal input {
+  padding: 9px;
+  font-size: 12px;
+  margin-right: 4px;
+}
+
+.modal button {
+  padding: 9px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(216, 198, 43);
+}
+
+.modal button:hover {
+  background-color: rgb(143, 132, 32);
 }
