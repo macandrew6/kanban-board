@@ -11,7 +11,10 @@ class App extends Component {
 
     this.state = {
       categories: ['todo', 'inProgress', 'completed'],
-      allListItems: [], // normalizing => todoIds : [id, id, id], todoById : { [id] : {}}
+      allListItems: [], 
+      // normalizing => todoIds : [id, id, id], todoById : { [id] : {}}
+      //todoIds: [],
+      //todoById: {id: {}}
       show: false,
       editingTodo: {text: '', id: 0, category: ''},
       editingItemId: 0
