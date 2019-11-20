@@ -4,7 +4,6 @@ import InprogressBoard from './components/InprogressBoard';
 import CompletedBoard from './components/CompletedBoard';
 import TodoInput from './components/TodoInput';
 import Modal from './components/modal/modal';
-import Provider from 'redux';
 
 // maybe practice converting app to use redux
 // create a store, 
