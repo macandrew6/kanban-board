@@ -152,43 +152,41 @@ class App extends Component {
 
   render() {
     return (
-      <Provider>
-        <div className="App">
-          <h2>Kanban board</h2>
-          <div className="kanbanboard-container">
-            <TodoBoard
-              moveTodoRight={this.moveTodoRight}
-              moveTodoLeft={this.moveTodoLeft}
-              deleteTodo={this.deleteTodo}
-              toggleModal={this.toggleModal}
-              todoList={this.filterTodoListItems()}
-            />
-            <InprogressBoard
-              moveTodoRight={this.moveTodoRight}
-              moveTodoLeft={this.moveTodoLeft}
-              deleteTodo={this.deleteTodo}
-              toggleModal={this.toggleModal}
-              inProgressList={this.filterInProgressListItems()}
-            />
-            <CompletedBoard
-              moveTodoRight={this.moveTodoRight}
-              moveTodoLeft={this.moveTodoLeft}
-              deleteTodo={this.deleteTodo}
-              toggleModal={this.toggleModal}
-              completedList={this.filterCompletedListItems()}
-            />
-          </div>
-          {this.state.show && (
-            <Modal
-              editingTodo={this.state.editingTodo}
-              editTodo={this.editTodo}
-              toggleModal={this.toggleModal}
-              show={this.state.show}
-            ></Modal>
-          )}
-          <TodoInput addTodo={this.addTodo} />
+      <div className="App">
+        <h2>Kanban board</h2>
+        <div className="kanbanboard-container">
+          <TodoBoard
+            moveTodoRight={this.moveTodoRight}
+            moveTodoLeft={this.moveTodoLeft}
+            deleteTodo={this.deleteTodo}
+            toggleModal={this.toggleModal}
+            todoList={this.filterTodoListItems()}
+          />
+          <InprogressBoard
+            moveTodoRight={this.moveTodoRight}
+            moveTodoLeft={this.moveTodoLeft}
+            deleteTodo={this.deleteTodo}
+            toggleModal={this.toggleModal}
+            inProgressList={this.filterInProgressListItems()}
+          />
+          <CompletedBoard
+            moveTodoRight={this.moveTodoRight}
+            moveTodoLeft={this.moveTodoLeft}
+            deleteTodo={this.deleteTodo}
+            toggleModal={this.toggleModal}
+            completedList={this.filterCompletedListItems()}
+          />
         </div>
-      </Provider>
+        {this.state.show && (
+          <Modal
+            editingTodo={this.state.editingTodo}
+            editTodo={this.editTodo}
+            toggleModal={this.toggleModal}
+            show={this.state.show}
+          ></Modal>
+        )}
+        <TodoInput addTodo={this.addTodo} />
+      </div>
     );
   }
 }
