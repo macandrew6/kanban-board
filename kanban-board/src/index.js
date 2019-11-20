@@ -5,6 +5,6 @@ import './index.css';
 import store from './store';
 
 ReactDOM.render(
-  <Root />,
+  <Root store={store}/>,
   document.getElementById('root')
 );
