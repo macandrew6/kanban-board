@@ -11,3 +11,8 @@ const receiveTodo = todo => ({
   type: RECEIVE_TODO,
   todo
 });
+
+const deleteTodo = remainingTodos => ({
+  type: REMOVE_TODO,
+  remainingTodos
+});
