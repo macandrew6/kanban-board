@@ -50,6 +50,7 @@ class App extends Component {
   
   addTodo(todo) {
     const allListItems = JSON.parse(JSON.stringify(this.state.allListItems));
+    // add redux action creator here
     allListItems.push(todo);
 
     this.setState({
