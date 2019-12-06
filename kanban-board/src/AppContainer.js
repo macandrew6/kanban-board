@@ -5,4 +5,4 @@
 
 // mapDispatchToProps
 
-// 
+// connect(mapStateToProps, mapDispatchToProps)(App)
