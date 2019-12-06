@@ -8,6 +8,7 @@ import Modal from './components/modal/modal';
 // maybe practice converting app to use redux
 // create a store, 
 // action creators, 
+// create app container
 // reducers, 
 // thunk middle ware if connecting to a server (probably not)
 // utils and selectors for more organized code
