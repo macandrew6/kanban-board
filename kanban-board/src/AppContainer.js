@@ -5,7 +5,6 @@ import App from './App.js';
 
 // mapStateToProps
 const mapStateToProps = ({state, ownProps}) => {
-
   return {
     allListItems: state.todos
   };
