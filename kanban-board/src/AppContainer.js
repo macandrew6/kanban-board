@@ -1,5 +1,5 @@
 // connect to redux store
-import {connect} from 'redux';
+import { connect } from 'react-redux';
 // import App from "./App.js";
 import App from './App.js';
 
@@ -11,7 +11,7 @@ const mapStateToProps = ({state, ownProps}) => {
 };
 
 // mapDispatchToProps
-const mapDispatchToProps = ({dispatch}) => {
+const mapDispatchToProps = dispatch => {
   return {
 
   };
