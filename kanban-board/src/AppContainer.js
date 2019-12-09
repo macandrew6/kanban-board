@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import App from './App.js';
 
 // mapStateToProps
-const mapStateToProps = ({state, ownProps}) => {
+const mapStateToProps = (state) => {
   return {
     allListItems: state.todos
   };
