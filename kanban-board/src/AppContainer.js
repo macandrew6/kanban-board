@@ -7,7 +7,7 @@ import App from './App.js';
 const mapStateToProps = ({state, ownProps}) => {
 
   return {
-
+    allListItems: state.todos
   };
 };
 
@@ -18,4 +18,4 @@ const mapDispatchToProps = ({dispatch}) => {
   };
 };
 
-connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);
