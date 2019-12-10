@@ -13,7 +13,7 @@ const mapStateToProps = (state) => {
 // mapDispatchToProps
 const mapDispatchToProps = dispatch => {
   return {
-
+    getAllTodos: () => dispatch()
   };
 };
 
