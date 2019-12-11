@@ -1,3 +1,4 @@
+// looks into local storage by key and try to parse it into json
 export const loadState = () => {
   try {
     const serializeState = localStorage.getItem('state');
