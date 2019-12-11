@@ -9,6 +9,10 @@ import Modal from './components/modal/modal';
 // create a store, 
 // action creators, 
 // create app container
+//+++++++
+// create loadstate file
+//+++++++
+
 // reducers, 
 // thunk middle ware if connecting to a server (probably not)
 // utils and selectors for more organized code
