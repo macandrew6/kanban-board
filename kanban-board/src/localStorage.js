@@ -10,3 +10,8 @@ export const loadState = () => {
     return undefined;
   }
 };
+
+// function to save the state into local storage
+export const saveState = (state) => {
+  
+};
