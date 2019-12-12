@@ -34,7 +34,6 @@ class App extends Component {
 
   componentDidMount() {
     let savedallListItems = localStorage.getItem('allListItems');
-
     if (savedallListItems) { 
       let parsedAllListItems = JSON.parse(savedallListItems);
       this.setState({
@@ -69,10 +68,6 @@ class App extends Component {
   }
 
   editTodo(id, updatedText) {
-    // need id
-    // need todo 
-    // need alltodos
-    console.log(updatedText);
     const allListItems = JSON.parse(JSON.stringify(this.state.allListItems));
     const updatingListItem = allListItems.find(item => item.id === id);
     updatingListItem.text = updatedText;

@@ -2,6 +2,7 @@
 import { connect } from 'react-redux';
 // import App from "./App.js";
 import App from './App.js';
+import { receiveAllTodos } from './actions/todos_action';
 
 // mapStateToProps
 const mapStateToProps = (state) => {
@@ -13,7 +14,7 @@ const mapStateToProps = (state) => {
 // mapDispatchToProps
 const mapDispatchToProps = dispatch => {
   return {
-    getAllTodos: () => dispatch()
+    
   };
 };
 
