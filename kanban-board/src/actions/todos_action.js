@@ -7,7 +7,7 @@ const receiveAllTodos = todos => ({
   todos
 });
 
-const receiveTodo = todo => ({
+const addTodo = todo => ({
   type: RECEIVE_TODO,
   todo
 });
@@ -16,3 +16,8 @@ const deleteTodo = remainingTodos => ({
   type: REMOVE_TODO,
   remainingTodos
 });
+
+// const updateTodo = id => ({
+//   type: UPDATE_TODO,
+
+// })

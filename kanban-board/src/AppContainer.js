@@ -7,7 +7,7 @@ import { receiveAllTodos } from './actions/todos_action';
 // mapStateToProps
 const mapStateToProps = (state) => {
   return {
-    allListItems: state.todos
+    allListItems: Object.values(state.allListItems)
   };
 };
 

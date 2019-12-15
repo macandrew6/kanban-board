@@ -110,7 +110,6 @@ class App extends Component {
 
   moveTodoLeft(e, id) {
     const allListItems = JSON.parse(JSON.stringify(this.state.allListItems));
-    // const allListItems = this.state.allListItems.slice();
     const target = allListItems.find(item => item.id === id);
     for (let i = 1; i < this.state.categories.length; i++) {
       let category = this.state.categories[i];
@@ -143,6 +142,8 @@ class App extends Component {
   }
 
   render() {
+    console.log(this.props.allListItems);
+
     return (
       <div className="App">
         <h2>Kanban board</h2>
