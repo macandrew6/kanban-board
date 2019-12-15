@@ -19,5 +19,4 @@ const deleteTodo = remainingTodos => ({
 
 // const updateTodo = id => ({
 //   type: UPDATE_TODO,
-
 // })
