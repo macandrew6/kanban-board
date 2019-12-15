@@ -2,7 +2,7 @@
 import { connect } from 'react-redux';
 // import App from "./App.js";
 import App from './App.js';
-import { receiveAllTodos } from './actions/todos_action';
+import { receiveAllTodos, addTodo } from './actions/todos_action';
 
 // mapStateToProps
 const mapStateToProps = (state) => {
