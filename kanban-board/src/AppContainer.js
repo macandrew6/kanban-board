@@ -3,6 +3,10 @@ import { connect } from 'react-redux';
 import App from './App.js';
 import { receiveAllTodos, addTodo } from './actions/todos_action';
 
+// normalizing => todoIds : [id, id, id], todoById : { [id] : {}}
+//todoIds: [],
+//todoById: {id: {}}
+
 // mapStateToProps
 const mapStateToProps = (state) => {
   return {
