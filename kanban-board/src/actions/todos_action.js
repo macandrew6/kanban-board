@@ -13,7 +13,7 @@ const addTodo = todo => ({
   todo
 });
 
-const deleteTodo = remainingTodos => ({
+const removeTodo = remainingTodos => ({
   type: REMOVE_TODO,
   remainingTodos
 });
