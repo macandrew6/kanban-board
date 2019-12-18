@@ -1,5 +1,5 @@
 export const RECEIVE_ALL_TODOS = 'RECEIVE_ALL_TODOS';
-export const RECEIVE_TODO = "RECEIVE_TODO";
+export const ADD_TODO = "ADD_TODO";
 export const REMOVE_TODO = "REMOVE_TODO";
 export const UPDATE_TODO = "UPDATE_TODO";
 
@@ -9,7 +9,7 @@ const receiveAllTodos = todos => ({
 });
 
 const addTodo = todo => ({
-  type: RECEIVE_TODO,
+  type: ADD_TODO,
   todo
 });
 
