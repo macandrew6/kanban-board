@@ -30,6 +30,7 @@ class App extends Component {
   }
 
   componentDidMount() {
+    this.props.receiveAllTodos(this.props.allListItems);
     let savedallListItems = localStorage.getItem('allListItems');
     if (savedallListItems) { 
       let parsedAllListItems = JSON.parse(savedallListItems);
@@ -45,13 +46,7 @@ class App extends Component {
     console.log(this.props.addTodo);
     const allListItems = JSON.parse(JSON.stringify(this.state.allListItems));
     // add redux action creator here
-    allListItems.push(todo);
-
-    this.setState({
-      allListItems: allListItems 
-    }, () => {
-      localStorage.setItem('allListItems', JSON.stringify(allListItems));
-    });
+    this.props.addTodo(todo);
   }
 
   deleteTodo(e, id) {
@@ -125,17 +120,17 @@ class App extends Component {
   }
 
   filterTodoListItems() {
-    const copyAllLists = JSON.parse(JSON.stringify(this.state.allListItems));
+    const copyAllLists = JSON.parse(JSON.stringify(this.props.allListItems));
     return copyAllLists.filter(item => item.category === 'todo');
   }
 
   filterInProgressListItems() {
-    const copyAllLists = JSON.parse(JSON.stringify(this.state.allListItems));
+    const copyAllLists = JSON.parse(JSON.stringify(this.props.allListItems));
     return copyAllLists.filter(item => item.category === 'inProgress');
   }
 
   filterCompletedListItems() {
-    const copyAllLists = JSON.parse(JSON.stringify(this.state.allListItems));
+    const copyAllLists = JSON.parse(JSON.stringify(this.props.allListItems));
     return copyAllLists.filter(item => item.category === 'completed');
   }
 
