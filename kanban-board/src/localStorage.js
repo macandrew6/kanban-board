@@ -20,7 +20,9 @@ export const loadState = () => {
 export const saveState = (state) => {
   try {
     const serializedState = JSON.stringify(state);
+    console.log(serializedState);
     localStorage.setItem('allListItems', serializedState);
+    console.log(localStorage.getItem('allListItems'));
   } catch (err) {
     return undefined;
   }

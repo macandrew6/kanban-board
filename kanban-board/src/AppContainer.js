@@ -14,7 +14,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = dispatch => {
   return {
     receiveAllTodos: (todos) => dispatch(receiveAllTodos(todos)),
-    addTodo: (todo) => dispatch(addTodo(todo))
+    addTodo: (todo) => dispatch(addTodo(todo)),
   };
 };
 
