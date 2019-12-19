@@ -4,6 +4,7 @@ import InprogressBoard from './components/InprogressBoard';
 import CompletedBoard from './components/CompletedBoard';
 import TodoInput from './components/TodoInput';
 import Modal from './components/modal/modal';
+import { saveState } from './localStorage';
 
 class App extends Component {
   constructor() {
@@ -44,6 +45,9 @@ class App extends Component {
     if (todo.text) {
       this.props.addTodo(todo);
     }
+    saveState({
+      allListItems: this.props.allListItems
+    });
   }
 
   deleteTodo(e, id) {
