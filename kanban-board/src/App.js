@@ -31,21 +31,20 @@ class App extends Component {
 
   componentDidMount() {
     this.props.receiveAllTodos(this.props.allListItems);
-    let savedallListItems = localStorage.getItem('allListItems');
-    if (savedallListItems) { 
-      let parsedAllListItems = JSON.parse(savedallListItems);
-      this.setState({
-        allListItems: parsedAllListItems
-      });
-    } else {
-      console.log('no todos');
-    }
+    // let savedallListItems = localStorage.getItem('allListItems');
+    // if (savedallListItems) { 
+    //   let parsedAllListItems = JSON.parse(savedallListItems);
+    //   this.setState({
+    //     allListItems: parsedAllListItems
+    //   });
+    // } else {
+    //   console.log('no todos');
+    // }
   }
   
   addTodo(todo) {
-    console.log(this.props.addTodo);
-    const allListItems = JSON.parse(JSON.stringify(this.state.allListItems));
-    // add redux action creator here
+    // console.log(this.props.addTodo);
+    // const allListItems = JSON.parse(JSON.stringify(this.state.allListItems));
     this.props.addTodo(todo);
   }
 
