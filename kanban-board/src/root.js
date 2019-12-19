@@ -12,6 +12,8 @@ store.subscribe(() => {
   });
 });
 
+console.log(store.getState());
+
 const Root = () => {
   return (
     <div>

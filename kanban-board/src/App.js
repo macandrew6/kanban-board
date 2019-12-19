@@ -5,10 +5,6 @@ import CompletedBoard from './components/CompletedBoard';
 import TodoInput from './components/TodoInput';
 import Modal from './components/modal/modal';
 
-// maybe practice converting app to use redux
-// thunk middle ware if connecting to a server (probably not)
-// utils and selectors for more organized code
-
 class App extends Component {
   constructor() {
     super();
