@@ -45,7 +45,9 @@ class App extends Component {
   addTodo(todo) {
     // console.log(this.props.addTodo);
     // const allListItems = JSON.parse(JSON.stringify(this.state.allListItems));
-    this.props.addTodo(todo);
+    if (todo.text) {
+      this.props.addTodo(todo);
+    }
   }
 
   deleteTodo(e, id) {
