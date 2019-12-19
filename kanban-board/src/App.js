@@ -45,9 +45,9 @@ class App extends Component {
     if (todo.text) {
       this.props.addTodo(todo);
     }
-    saveState({
-      allListItems: this.props.allListItems
-    });
+    // saveState({
+    //   allListItems: this.props.allListItems
+    // });
   }
 
   deleteTodo(e, id) {
