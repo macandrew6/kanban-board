@@ -27,7 +27,11 @@ class App extends Component {
   }
 
   componentDidMount() {
-    this.props.receiveAllTodos(this.props.allListItems);
+    if (this.props.allListItems) {
+      this.props.receiveAllTodos(this.props.allListItems);
+    } else {
+      console.log('no todos');
+    }
     // let savedallListItems = localStorage.getItem('allListItems');
     // if (savedallListItems) { 
     //   let parsedAllListItems = JSON.parse(savedallListItems);
@@ -40,14 +44,15 @@ class App extends Component {
   }
   
   addTodo(todo) {
-    // console.log(this.props.addTodo);
-    // const allListItems = JSON.parse(JSON.stringify(this.state.allListItems));
+    const allListItems = JSON.parse(JSON.stringify(this.state.allListItems));
     if (todo.text) {
       this.props.addTodo(todo);
     }
-    // saveState({
-    //   allListItems: this.props.allListItems
-    // });
+    this.setState({
+      allListItems
+    }, () => {
+      localStorage.setItem('allListItems', JSON.stringify(allListItems));
+    });
   }
 
   deleteTodo(e, id) {
@@ -85,7 +90,7 @@ class App extends Component {
   }
 
   moveTodoRight(e, id) {
-    const allListItems = JSON.parse(JSON.stringify(this.state.allListItems));
+    const allListItems = JSON.parse(JSON.stringify(this.props.allListItems));
     const target = allListItems.find(item => item.id === id);
     for (let i = 0; i < this.state.categories.length - 1; i++) {
       let category = this.state.categories[i];
@@ -94,7 +99,7 @@ class App extends Component {
         break;
       }
     }
-    
+    console.log(allListItems);
     this.setState({
       allListItems
     }, () => {
