@@ -48,6 +48,7 @@ class App extends Component {
     if (todo.text) {
       this.props.addTodo(todo);
     }
+    // why isnt this being saved to local storage
     this.setState({
       allListItems
     }, () => {
