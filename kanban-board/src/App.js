@@ -49,6 +49,7 @@ class App extends Component {
       this.props.addTodo(todo);
     }
     // why isnt this being saved to local storage
+    console.log(allListItems);
     this.setState({
       allListItems
     }, () => {
