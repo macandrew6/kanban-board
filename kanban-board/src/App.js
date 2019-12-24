@@ -49,11 +49,11 @@ class App extends Component {
       this.props.addTodo(todo);
     }
     // why isnt this being saved to local storage
-    this.setState({
-      allListItems
-    }, () => {
-      localStorage.setItem('allListItems', JSON.stringify(allListItems));
-    });
+    // this.setState({
+    //   allListItems
+    // }, () => {
+    //   localStorage.setItem('allListItems', JSON.stringify(allListItems));
+    // });
   }
 
   deleteTodo(e, id) {
