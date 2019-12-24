@@ -32,15 +32,15 @@ class App extends Component {
     } else {
       console.log('no todos');
     }
-    let savedallListItems = localStorage.getItem('allListItems');
-    if (savedallListItems) { 
-      let parsedAllListItems = JSON.parse(savedallListItems);
-      this.setState({
-        allListItems: parsedAllListItems
-      });
-    } else {
-      console.log('no todos');
-    }
+    // let savedallListItems = localStorage.getItem('allListItems');
+    // if (savedallListItems) { 
+    //   let parsedAllListItems = JSON.parse(savedallListItems);
+    //   this.setState({
+    //     allListItems: parsedAllListItems
+    //   });
+    // } else {
+    //   console.log('no todos');
+    // }
   }
   
   addTodo(todo) {
