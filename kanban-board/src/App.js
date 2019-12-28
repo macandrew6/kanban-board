@@ -27,11 +27,12 @@ class App extends Component {
   }
 
   componentDidMount() {
-    if (this.props.allListItems) {
-      this.props.receiveAllTodos(this.props.allListItems);
-    } else {
-      console.log('no todos');
-    }
+    // if (this.props.allListItems) {
+    //   this.props.receiveAllTodos(this.props.allListItems);
+    // } else {
+    //   console.log('no todos');
+    // }
+    
     // let savedallListItems = localStorage.getItem('allListItems');
     // if (savedallListItems) { 
     //   let parsedAllListItems = JSON.parse(savedallListItems);
