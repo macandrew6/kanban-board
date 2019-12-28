@@ -6,6 +6,11 @@ import { loadState, saveState } from './localStorage';
 
 const persistedState = loadState();
 const store = configureStore(persistedState);
+store.subscribe(() => {
+  saveState({
+    allListItems: store.getState().todos
+  });
+});
 
 console.log(store.getState());
 
