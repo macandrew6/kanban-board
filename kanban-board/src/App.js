@@ -49,13 +49,9 @@ class App extends Component {
     if (todo.text) {
       this.props.addTodo(todo);
     }
+    localStorage.setItem('allListItems', JSON.stringify(allListItems));
     // why isnt this being saved to local storage
     console.log(allListItems);
-    // this.setState({
-    //   allListItems
-    // }, () => {
-      localStorage.setItem('allListItems', JSON.stringify(allListItems));
-    // });
   }
 
   deleteTodo(e, id) {
