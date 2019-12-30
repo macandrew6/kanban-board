@@ -26,11 +26,13 @@ class App extends Component {
   }
 
   componentDidMount() {
-    // if (this.props.allListItems) {
-    //   this.props.receiveAllTodos(this.props.allListItems);
-    // } else {
-    //   console.log('no todos');
-    // }
+    if (this.props.allListItems) {
+      this.props.receiveAllTodos(this.props.allListItems);
+      localStorage.setItem('allListItems', JSON.stringify(this.props.allListItems));
+
+    } else {
+      console.log('no todos');
+    }
     
     // let savedallListItems = localStorage.getItem('allListItems');
     // if (savedallListItems) { 
@@ -57,7 +59,7 @@ class App extends Component {
   deleteTodo(e, id) {
     const allListItems = JSON.parse(JSON.stringify(this.props.allListItems));
     const updatedListItems = allListItems.filter(item => item.id !== id);
-    // this.props.
+    this.props.removeTodo(updatedListItems);
 
     localStorage.setItem('allListItems', JSON.stringify(updatedListItems));
   }
