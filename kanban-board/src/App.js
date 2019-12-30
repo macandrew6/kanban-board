@@ -59,11 +59,7 @@ class App extends Component {
     const allListItems = JSON.parse(JSON.stringify(this.state.allListItems));
     const updatedListItems = allListItems.filter(item => item.id !== id);
 
-    this.setState({
-      allListItems: updatedListItems
-    }, () => {
-      localStorage.setItem('allListItems', JSON.stringify(updatedListItems));
-    });
+    localStorage.setItem('allListItems', JSON.stringify(updatedListItems));
   }
 
   editTodo(id, updatedText) {
