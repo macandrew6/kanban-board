@@ -56,26 +56,26 @@ class App extends Component {
   }
 
   deleteTodo(e, id) {
-    const allListItems = JSON.parse(JSON.stringify(this.state.allListItems));
+    const allListItems = JSON.parse(JSON.stringify(this.props.allListItems));
     const updatedListItems = allListItems.filter(item => item.id !== id);
 
     localStorage.setItem('allListItems', JSON.stringify(updatedListItems));
   }
 
   editTodo(id, updatedText) {
-    const allListItems = JSON.parse(JSON.stringify(this.state.allListItems));
+    const allListItems = JSON.parse(JSON.stringify(this.props.allListItems));
     const updatingListItem = allListItems.find(item => item.id === id);
     updatingListItem.text = updatedText;
 
-    this.setState({
-      allListItems: allListItems
-    }, () => {
+    // this.setState({
+    //   allListItems: allListItems
+    // }, () => {
       localStorage.setItem('allListItems', JSON.stringify(allListItems));
-    })
+    // })
   }
 
   toggleModal(e, id) {
-    const editingTodo = this.state.allListItems.find(item =>
+    const editingTodo = this.props.allListItems.find(item =>
       item.id === id);
 
     this.setState({
@@ -96,15 +96,15 @@ class App extends Component {
       }
     }
     console.log(allListItems);
-    this.setState({
-      allListItems
-    }, () => {
+    // this.setState({
+    //   allListItems
+    // }, () => {
       localStorage.setItem('allListItems', JSON.stringify(allListItems));
-    });
+    // });
   }
 
   moveTodoLeft(e, id) {
-    const allListItems = JSON.parse(JSON.stringify(this.state.allListItems));
+    const allListItems = JSON.parse(JSON.stringify(this.props.allListItems));
     const target = allListItems.find(item => item.id === id);
     for (let i = 1; i < this.state.categories.length; i++) {
       let category = this.state.categories[i];
@@ -114,11 +114,11 @@ class App extends Component {
       }
     }
 
-    this.setState({
-      allListItems
-    }, () => {
+    // this.setState({
+    //   allListItems
+    // }, () => {
       localStorage.setItem('allListItems', JSON.stringify(allListItems));
-    });
+    // });
   }
 
   filterTodoListItems() {
