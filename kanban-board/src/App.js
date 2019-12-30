@@ -29,7 +29,6 @@ class App extends Component {
     if (this.props.allListItems) {
       this.props.receiveAllTodos(this.props.allListItems);
       localStorage.setItem('allListItems', JSON.stringify(this.props.allListItems));
-
     } else {
       console.log('no todos');
     }
