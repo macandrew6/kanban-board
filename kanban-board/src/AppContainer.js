@@ -1,7 +1,7 @@
 // connect to redux store
 import { connect } from 'react-redux';
 import App from './App.js';
-import { receiveAllTodos, addTodo } from './actions/todos_action';
+import { receiveAllTodos, addTodo, removeTodo } from './actions/todos_action';
 
 // mapStateToProps
 const mapStateToProps = (state) => {
@@ -15,6 +15,7 @@ const mapDispatchToProps = dispatch => {
   return {
     receiveAllTodos: (todos) => dispatch(receiveAllTodos(todos)),
     addTodo: (todo) => dispatch(addTodo(todo)),
+    removeTodo: (todos) => dispatch(removeTodo(todos))
   };
 };
 
