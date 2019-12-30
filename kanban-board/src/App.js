@@ -12,7 +12,6 @@ class App extends Component {
 
     this.state = {
       categories: ['todo', 'inProgress', 'completed'],
-      allListItems: [], 
       show: false,
       editingTodo: {text: '', id: 0, category: ''},
       editingItemId: 0
@@ -67,11 +66,7 @@ class App extends Component {
     const updatingListItem = allListItems.find(item => item.id === id);
     updatingListItem.text = updatedText;
 
-    // this.setState({
-    //   allListItems: allListItems
-    // }, () => {
-      localStorage.setItem('allListItems', JSON.stringify(allListItems));
-    // })
+    localStorage.setItem('allListItems', JSON.stringify(allListItems));
   }
 
   toggleModal(e, id) {
@@ -95,12 +90,7 @@ class App extends Component {
         break;
       }
     }
-    console.log(allListItems);
-    // this.setState({
-    //   allListItems
-    // }, () => {
-      localStorage.setItem('allListItems', JSON.stringify(allListItems));
-    // });
+    localStorage.setItem('allListItems', JSON.stringify(allListItems));
   }
 
   moveTodoLeft(e, id) {
@@ -114,11 +104,7 @@ class App extends Component {
       }
     }
 
-    // this.setState({
-    //   allListItems
-    // }, () => {
-      localStorage.setItem('allListItems', JSON.stringify(allListItems));
-    // });
+    localStorage.setItem('allListItems', JSON.stringify(allListItems));
   }
 
   filterTodoListItems() {
