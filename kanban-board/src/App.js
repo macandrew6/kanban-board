@@ -52,7 +52,7 @@ class App extends Component {
     localStorage.setItem('allListItems', JSON.stringify(allListItems));
     // so now the behavior is saving the state of the previously added todo only
     // why isnt this being saved to local storage
-    console.log(allListItems);
+    // console.log(allListItems);
   }
 
   deleteTodo(e, id) {
