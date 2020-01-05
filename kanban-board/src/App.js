@@ -45,13 +45,12 @@ class App extends Component {
   }
   
   addTodo(todo) {
+    // local storage is being updated one action too late
     const allListItems = JSON.parse(JSON.stringify(this.props.allListItems));
     if (todo.text) {
       this.props.addTodo(todo);
     }
     localStorage.setItem('allListItems', JSON.stringify(allListItems));
-    // so now the behavior is saving the state of the previously added todo only
-    // why isnt this being saved to local storage
   }
 
   deleteTodo(e, id) {
