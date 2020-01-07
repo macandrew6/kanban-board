@@ -12,8 +12,6 @@ const store = configureStore(persistedState);
 //   });
 // });
 
-console.log(store.getState());
-
 const Root = () => {
   return (
     <div>

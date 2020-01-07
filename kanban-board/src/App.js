@@ -47,12 +47,11 @@ class App extends Component {
   addTodo(todo) {
     // local storage is being updated one action too late
     const allListItems = JSON.parse(JSON.stringify(this.props.allListItems));
-    console.log(allListItems)
     if (todo.text) {
-      localStorage.setItem('allListItems', JSON.stringify(allListItems));
       this.props.addTodo(todo);
     }
-    console.log(localStorage.getItem('allListItems'))
+    allListItems.push(todo);
+    localStorage.setItem('allListItems', JSON.stringify(allListItems));
   }
 
   deleteTodo(e, id) {
@@ -60,7 +59,6 @@ class App extends Component {
     const updatedListItems = allListItems.filter(item => item.id !== id);
     localStorage.setItem('allListItems', JSON.stringify(updatedListItems));
     this.props.removeTodo(updatedListItems);
-
   }
 
   editTodo(id, updatedText) {
@@ -126,6 +124,7 @@ class App extends Component {
 
   render() {
     console.log(this.props.allListItems);
+    console.log(localStorage.getItem('allListItems'))
 
     return (
       <div className="App">
