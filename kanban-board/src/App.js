@@ -47,25 +47,27 @@ class App extends Component {
   addTodo(todo) {
     // local storage is being updated one action too late
     const allListItems = JSON.parse(JSON.stringify(this.props.allListItems));
+    console.log(allListItems)
     if (todo.text) {
+      localStorage.setItem('allListItems', JSON.stringify(allListItems));
       this.props.addTodo(todo);
     }
-    localStorage.setItem('allListItems', JSON.stringify(allListItems));
+    console.log(localStorage.getItem('allListItems'))
   }
 
   deleteTodo(e, id) {
     const allListItems = JSON.parse(JSON.stringify(this.props.allListItems));
     const updatedListItems = allListItems.filter(item => item.id !== id);
+    localStorage.setItem('allListItems', JSON.stringify(updatedListItems));
     this.props.removeTodo(updatedListItems);
 
-    localStorage.setItem('allListItems', JSON.stringify(updatedListItems));
   }
 
   editTodo(id, updatedText) {
     const allListItems = JSON.parse(JSON.stringify(this.props.allListItems));
     const updatingListItem = allListItems.find(item => item.id === id);
     updatingListItem.text = updatedText;
-
+    
     localStorage.setItem('allListItems', JSON.stringify(allListItems));
   }
 
