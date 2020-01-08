@@ -57,6 +57,7 @@ class App extends Component {
   deleteTodo(e, id) {
     const allListItems = JSON.parse(JSON.stringify(this.props.allListItems));
     const updatedListItems = allListItems.filter(item => item.id !== id);
+    console.log(updatedListItems);
     localStorage.setItem('allListItems', JSON.stringify(updatedListItems));
     this.props.removeTodo(updatedListItems);
   }
