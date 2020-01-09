@@ -10,12 +10,13 @@ export default (oldState = {}, action) => {
     case RECEIVE_ALL_TODOS:
       return Object.assign({}, oldState, action.todos);
     case ADD_TODO:
+      console.log(action.todo);
       return Object.assign({}, oldState, {[action.todo.id]: action.todo});
     case REMOVE_TODO:
       console.log(oldState);
-      let newState = oldState;
+      let newState = Object.assign({}, oldState);
       delete newState[action.id];
-      return Object.assign({}, newState);
+      return newState;
     default:
       return oldState;
   }

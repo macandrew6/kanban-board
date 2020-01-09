@@ -58,7 +58,6 @@ class App extends Component {
     const allListItems = JSON.parse(JSON.stringify(this.props.allListItems));
     const updatedListItems = allListItems.filter(item => item.id !== id);
     localStorage.setItem('allListItems', JSON.stringify(updatedListItems));
-    console.log(updatedListItems);
     this.props.removeTodo(id);
   }
 
@@ -124,8 +123,8 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.props.allListItems);
-    console.log(localStorage.getItem('allListItems'))
+    // console.log(this.props.allListItems);
+    // console.log(localStorage.getItem('allListItems'))
 
     return (
       <div className="App">
