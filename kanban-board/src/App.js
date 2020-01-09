@@ -4,7 +4,7 @@ import InprogressBoard from './components/InprogressBoard';
 import CompletedBoard from './components/CompletedBoard';
 import TodoInput from './components/TodoInput';
 import Modal from './components/modal/modal';
-import { saveState } from './localStorage';
+// import { saveState } from './localStorage';
 
 class App extends Component {
   constructor() {
@@ -26,22 +26,6 @@ class App extends Component {
   }
 
   componentDidMount() {
-    if (this.props.allListItems) {
-      this.props.receiveAllTodos(this.props.allListItems);
-      localStorage.setItem('allListItems', JSON.stringify(this.props.allListItems));
-    } else {
-      console.log('no todos');
-    }
-    
-    // let savedallListItems = localStorage.getItem('allListItems');
-    // if (savedallListItems) { 
-    //   let parsedAllListItems = JSON.parse(savedallListItems);
-    //   this.setState({
-    //     allListItems: parsedAllListItems
-    //   });
-    // } else {
-    //   console.log('no todos');
-    // }
   }
   
   addTodo(todo) {
@@ -54,11 +38,14 @@ class App extends Component {
     localStorage.setItem('allListItems', JSON.stringify(allListItems));
   }
 
-  deleteTodo(e, id) {
-    const allListItems = JSON.parse(JSON.stringify(this.props.allListItems));
-    const updatedListItems = allListItems.filter(item => item.id !== id);
-    localStorage.setItem('allListItems', JSON.stringify(updatedListItems));
-    this.props.removeTodo(id);
+  deleteTodo(id) {
+    return () => {
+      console.log(this);
+      const allListItems = JSON.parse(JSON.stringify(this.props.allListItems));
+      const updatedListItems = allListItems.filter(item => item.id !== id);
+      localStorage.setItem('allListItems', JSON.stringify(updatedListItems));
+      this.props.removeTodo(id);
+    }
   }
 
   editTodo(id, updatedText) {

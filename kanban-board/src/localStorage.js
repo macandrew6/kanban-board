@@ -7,8 +7,8 @@ export const loadState = () => {
     }
     let json = JSON.parse(serializeState);
     const jsonObj = {};
-    Object.values(json).forEach((el, i) => {
-      jsonObj[i] = el;
+    Object.values(json).forEach((el) => {
+      jsonObj[el.id] = el;
     });
     return {'allListItems': jsonObj};
   } catch (err) { // in any errors return undefined for safety

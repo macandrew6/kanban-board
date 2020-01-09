@@ -2,15 +2,10 @@ import React from 'react';
 import AppContainer from "./AppContainer";
 import configureStore from './store';
 import { Provider } from "react-redux";
-import { loadState, saveState } from './localStorage';
+import { loadState } from './localStorage';
 
 const persistedState = loadState();
 const store = configureStore(persistedState);
-// store.subscribe(() => {
-//   saveState({
-//     allListItems: store.getState().todos
-//   });
-// });
 
 const Root = () => {
   return (
