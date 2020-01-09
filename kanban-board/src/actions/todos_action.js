@@ -13,9 +13,9 @@ export const addTodo = todo => ({
   todo
 });
 
-export const removeTodo = remainingTodos => ({
+export const removeTodo = id => ({
   type: REMOVE_TODO,
-  remainingTodos
+  id
 });
 
 // const updateTodo = id => ({

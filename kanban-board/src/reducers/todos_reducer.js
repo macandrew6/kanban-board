@@ -12,8 +12,10 @@ export default (oldState = {}, action) => {
     case ADD_TODO:
       return Object.assign({}, oldState, {[action.todo.id]: action.todo});
     case REMOVE_TODO:
-      const updatedListItems = action.remainingTodos.filter(item => item.id !== id);
-      return Object.assign({}, oldState, updatedListItems);
+      console.log(oldState);
+      let newState = oldState;
+      delete newState[action.id];
+      return Object.assign({}, newState);
     default:
       return oldState;
   }
