@@ -110,8 +110,24 @@ class App extends Component {
   }
 
   render() {
-    // console.log(this.props.allListItems);
-    // console.log(localStorage.getItem('allListItems'))
+    /*
+    Notes from Ben:
+
+    have one reusable component, with a bunch of items in it,
+    have a board component:
+      movetodoRight
+      movetodoLeft
+      ...
+    child component:
+      TodoBoard
+      InprogressBoard
+      CompletedBoard
+    
+    instead of wrapping the whole app in container,
+    wrap the boards in containers to make it better it iterate on later
+
+    Must Redo: Pokedex, BenchBnB, Redux Todo
+    */
 
     return (
       <div className="App">

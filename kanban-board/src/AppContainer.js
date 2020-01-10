@@ -13,7 +13,7 @@ const mapStateToProps = (state) => {
 // mapDispatchToProps
 const mapDispatchToProps = dispatch => {
   return {
-    receiveAllTodos: (todos) => dispatch(receiveAllTodos(todos)),
+    // receiveAllTodos: (todos) => dispatch(receiveAllTodos(todos)),
     addTodo: (todo) => dispatch(addTodo(todo)),
     removeTodo: (todos) => dispatch(removeTodo(todos))
   };
