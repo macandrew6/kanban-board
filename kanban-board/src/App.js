@@ -126,6 +126,8 @@ class App extends Component {
     instead of wrapping the whole app in container,
     wrap the boards in containers to make it better it iterate on later
 
+
+    
     Must Redo: Pokedex, BenchBnB, Redux Todo
     */
 
